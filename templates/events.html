@@ -1,0 +1,36 @@
+{% for x in events1 %}
+
+  <div class="panel panel-default">
+    <div class="panel-heading"><b style="font-size:1.2em;">{{ x["name"] }} </b>on {{ x["start_time"][:10] }}</div>
+    <div class="panel-body">
+      <img src="{{ x["cover"]["source"] }}" alt="" style="width: calc(100% + 30px); margin:-15px;">
+    </div>
+    <div class="panel-footer">
+      {% if 'ticket_uri' in x %}
+      <a href="{{ x['ticket_uri'] }}" class="btn btn-sm btn-default">Register</a>
+      {% endif %}
+      <a href="#" class="btn btn-sm btn-info" data-toggle="modal" data-target="#{{x['id']}}">Details</a>
+    </div>
+  </div>
+
+
+            <!-- Modal -->
+  <div class="modal fade" id="{{ x["id"] }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">{{ x["name"] }}</h4>
+        </div>
+        <div class="modal-body">
+          {{ x["description"] | replace('\n','<br>' | safe) }}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+{% endfor %}
