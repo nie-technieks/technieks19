@@ -1,5 +1,38 @@
-{% for x in events1 %}
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <title>techNIEks</title>
 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!--- basic page needs
+   ================================================== -->
+   <meta charset="utf-8">
+  <title>TechNIEks</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+   <!-- mobile specific metas
+   ================================================== -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+   <link rel="stylesheet" href="/static/css/events.css">
+
+
+   <!-- favicons
+  ================================================== -->
+  <link rel="icon" type="image/png" href="favicon.png">
+
+</head>
+<body id="top">
+
+<div class="container">
+        <div class="row mb-5">
+
+
+{% for x in events1 %}
+<!-- 
   <div class="panel panel-default">
     <div class="panel-heading"><b style="font-size:1.2em;">{{ x["name"] }} </b>on {{ x["start_time"][:10] }}</div>
     <div class="panel-body">
@@ -11,11 +44,11 @@
       {% endif %}
       <a href="#" class="btn btn-sm btn-info" data-toggle="modal" data-target="#{{x['id']}}">Details</a>
     </div>
-  </div>
+  </div> -->
 
 
             <!-- Modal -->
-  <div class="modal fade" id="{{ x["id"] }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+ <!--  <div class="modal fade" id="{{ x["id"] }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -30,7 +63,38 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
+
+
+
+            <div class="col-sm-6 col-md-4 col-lg-4 mt-4">
+                <div class="card card-inverse card-info">
+                    <img class="card-img-top" src="{{ x["cover"]["source"] }}">
+                    <div class="card-block">
+                       <!--  <figure class="profile profile-inline">
+                            <img src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif" class="profile-avatar" alt="">
+                        </figure> -->
+                        <h4 class="card-title">{{ x["name"] }}</h4>
+                        <div class="card-text">
+                           {{ (x["description"] | replace('\n','<br>' | safe))[:80]+"  ...." }}
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <small>on {{ x["start_time"][:10] }}</small>
+                        <button class="btn btn-info float-right btn-sm">Follow</button>
+                    </div>
+                </div>
+            </div>
+            
 
 
 {% endfor %}
+        </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>
