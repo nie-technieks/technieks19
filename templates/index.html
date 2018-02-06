@@ -55,6 +55,7 @@
 						<li><a class="smoothscroll"  href="#about" title="">About</a></li>
 					</ul>
 				</nav>
+          {% include 'nav.html' %}
    		</div> <!-- /top-bar -->
 
    	</div> <!-- /row -->
@@ -101,104 +102,36 @@
    		<div class="col-twelve">
 
    			<h5>About</h5>
-   			<h1>Let me introduce myself.</h1>
+   			<h1>The Endless Energy.</h1>
 
    			<div class="intro-info">
 
-   				<img src="images/profile-pic.jpg" alt="Profile Picture">
 
-   				<p class="lead">Lorem ipsum Exercitation culpa qui dolor consequat exercitation fugiat laborum ex ea eiusmod ad do aliqua occaecat nisi ad irure sunt id pariatur Duis laboris amet exercitation veniam labore consectetur ea id quis eiusmod.</p>
+
+   				<p style="font-size:1em;">techNIEks is a 3-Day national level techno-cultural extravaganza organized by NIE.
+          One of its idiosyncrasies is that, it is celebrated with unique themes every year.
+          This time, we have decided to emphasize on the massive potential embedded within us.
+          And hence the theme, "Oorja- The endless energy", we invite you to support us and
+          celebrate the energy for brighter future and brighter ourselves. The expected footfall
+          for three day festival is about 20,000.</p>
+          <a class="button stroke smoothscroll" href="/about" title="">Read More</a>
    			</div>
-
    		</div>
    	</div> <!-- /section-intro -->
 
-   	<div class="row about-content">
-
-   		<div class="col-six tab-full">
-
-   			<h3>Profile</h3>
-   			<p>Lorem ipsum Qui veniam ut consequat ex ullamco nulla in non ut esse in magna sint minim officia consectetur nisi commodo ea magna pariatur nisi cillum.</p>
-
-   			<ul class="info-list">
-   				<li>
-   					<strong>Fullname:</strong>
-   					<span>Juan Dela Cruz</span>
-   				</li>
-   				<li>
-   					<strong>Birth Date:</strong>
-   					<span>September 28, 1987</span>
-   				</li>
-   				<li>
-   					<strong>Job:</strong>
-   					<span>Freelancer, Frontend Developer</span>
-   				</li>
-   				<li>
-   					<strong>Website:</strong>
-   					<span>www.kardswebsite.com</span>
-   				</li>
-   				<li>
-   					<strong>Email:</strong>
-   					<span>me@kardswebsite.com</span>
-   				</li>
-
-   			</ul> <!-- /info-list -->
-
-   		</div>
-
-   		<div class="col-six tab-full">
-
-   			<h3>Skills</h3>
-   			<p>Lorem ipsum Qui veniam ut consequat ex ullamco nulla in non ut esse in magna sint minim officia consectetur nisi commodo ea magna pariatur nisi cillum.</p>
-
-				<ul class="skill-bars">
-				   <li>
-				   	<div class="progress percent90"><span>90%</span></div>
-				   	<strong>HTML5</strong>
-				   </li>
-				   <li>
-				   	<div class="progress percent85"><span>85%</span></div>
-				   	<strong>CSS3</strong>
-				   </li>
-				   <li>
-				   	<div class="progress percent70"><span>70%</span></div>
-				   	<strong>JQuery</strong>
-				   </li>
-				   <li>
-				   	<div class="progress percent95"><span>95%</span></div>
-				   	<strong>PHP</strong>
-				   </li>
-				   <li>
-
-				   	<div class="progress percent75"><span>75%</span></div>
-				   	<strong>Wordpress</strong>
-				   </li>
-
-				</ul> <!-- /skill-bars -->
-
-   		</div>
-
-   	</div>
-
-   	<div class="row button-section">
-   		<div class="col-twelve">
-   			<a href="#contact" title="Hire Me" class="button stroke smoothscroll">Hire Me</a>
-   			<a href="#" title="Download CV" class="button button-primary">Download CV</a>
-   		</div>
-   	</div>
 
    </section> <!-- /process-->
 
 
    <!-- resume Section
    ================================================== -->
-	<section id="resume" class="grey-section">
+	<section id="resume" class="grey-section" style="display:none;">
 
 		<div class="row section-intro">
    		<div class="col-twelve">
 
-   			<h5>Resume</h5>
-   			<h1>More of my credentials.</h1>
+   			<h5>Major Events</h5>
+   			<h1>The three days of Joy.</h1>
 
    			<p class="lead">Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do.</p>
 
@@ -359,8 +292,8 @@
 		<div class="row section-intro">
    		<div class="col-twelve">
 
-   			<h5>Portfolio</h5>
-   			<h1>Check Out Some of My Works.</h1>
+   			<h5>Past Sponsors</h5>
+   			<h1>Special Thanks.</h1>
 
    			<p class="lead">Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do.</p>
 
@@ -755,107 +688,24 @@
 	<section id="stats" class="count-up">
 
 		<div class="row">
-			<div class="col-twelve">
+			<div class="cols-one">
 
-				<div class="block-1-6 block-s-1-3 block-tab-1-2 block-mob-full stats-list">
 
-					<div class="bgrid stat">
 
-						<div class="icon-part">
-							<i class="icon-pencil-ruler"></i>
-						</div>
+					<div class="bgrid stat" style="float:none; margin:10px auto;">
 
-						<h3 class="stat-count">
+						<img src="static/images/technieks.png" width="180px">
+
+						<h3 class="stat-count2" id="cdown">
 							1500
 						</h3>
 
 						<h5 class="stat-title">
-							Projects Completed
+							Days to go
 						</h5>
 
 					</div> <!-- /stat -->
 
-					<div class="bgrid stat">
-
-						<div class="icon-part">
-							<i class="icon-users"></i>
-						</div>
-
-						<h3 class="stat-count">
-							900
-						</h3>
-
-						<h5 class="stat-title">
-							Happy Clients
-						</h5>
-
-					</div> <!-- /stat -->
-
-					<div class="bgrid stat">
-
-						<div class="icon-part">
-							<i class="icon-badge"></i>
-						</div>
-
-						<h3 class="stat-count">
-							200
-						</h3>
-
-						<h5 class="stat-title">
-							Awards Received
-						</h5>
-
-					</div> <!-- /stat -->
-
-					<div class="bgrid stat">
-
-						<div class="icon-part">
-							<i class="icon-light-bulb"></i>
-						</div>
-
-						<h3 class="stat-count">
-							120
-						</h3>
-
-						<h5 class="stat-title">
-							Crazy Ideas
-						</h5>
-
-					</div> <!-- /stat -->
-
-					<div class="bgrid stat">
-
-						<div class="icon-part">
-							<i class="icon-cup"></i>
-						</div>
-
-						<h3 class="stat-count">
-							1500
-						</h3>
-
-						<h5 class="stat-title">
-							Coffee Cups
-						</h5>
-
-					</div> <!-- /stat -->
-
-					<div class="bgrid stat">
-
-						<div class="icon-part">
-							<i class="icon-clock"></i>
-						</div>
-
-						<h3 class="stat-count">
-							7200
-						</h3>
-
-						<h5 class="stat-title">
-							Hours
-						</h5>
-
-					</div> <!-- /stat -->
-
-				</div> <!-- /stats-list -->
 
 			</div> <!-- /twelve -->
 		</div> <!-- /row -->
@@ -863,151 +713,7 @@
 	</section> <!-- /stats -->
 
 
-   <!-- contact
-   ================================================== -->
-	<section id="contact">
-
-		<div class="row section-intro">
-   		<div class="col-twelve">
-
-   			<h5>Contact</h5>
-   			<h1>I'd Love To Hear From You.</h1>
-
-   			<p class="lead">Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do.</p>
-
-   		</div>
-   	</div> <!-- /section-intro -->
-
-   	<div class="row contact-form">
-
-   		<div class="col-twelve">
-
-            <!-- form -->
-            <form name="contactForm" id="contactForm" method="post" action="">
-      			<fieldset>
-
-                  <div class="form-field">
- 						   <input name="contactName" type="text" id="contactName" placeholder="Name" value="" minlength="2" required="">
-                  </div>
-                  <div class="form-field">
-	      			   <input name="contactEmail" type="email" id="contactEmail" placeholder="Email" value="" required="">
-	               </div>
-                  <div class="form-field">
-	     				   <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value="">
-	               </div>
-                  <div class="form-field">
-	                 	<textarea name="contactMessage" id="contactMessage" placeholder="message" rows="10" cols="50" required=""></textarea>
-	               </div>
-                 <div class="form-field">
-                     <button class="submitform">Submit</button>
-                     <div id="submit-loader">
-                        <div class="text-loader">Sending...</div>
-       				      <div class="s-loader">
-								  	<div class="bounce1"></div>
-								  	<div class="bounce2"></div>
-								  	<div class="bounce3"></div>
-								</div>
-							</div>
-                  </div>
-
-      			</fieldset>
-      		</form> <!-- Form End -->
-
-            <!-- contact-warning -->
-            <div id="message-warning">
-            </div>
-            <!-- contact-success -->
-      		<div id="message-success">
-               <i class="fa fa-check"></i>Your message was sent, thank you!<br>
-      		</div>
-
-         </div> <!-- /col-twelve -->
-
-   	</div> <!-- /contact-form -->
-
-   	<div class="row contact-info">
-
-   		<div class="col-four tab-full">
-
-   			<div class="icon">
-   				<i class="icon-pin"></i>
-   			</div>
-
-   			<h5>Where to find me</h5>
-
-   			<p>
-            1600 Amphitheatre Parkway<br>
-            Mountain View, CA<br>
-            94043 US
-            </p>
-
-   		</div>
-
-   		<div class="col-four tab-full collapse">
-
-   			<div class="icon">
-   				<i class="icon-mail"></i>
-   			</div>
-
-   			<h5>Email Me At</h5>
-
-   			<p>someone@kardswebsite.com<br>
-			   	info@kardswebsite.com
-			   </p>
-
-   		</div>
-
-   		<div class="col-four tab-full">
-
-   			<div class="icon">
-   				<i class="icon-phone"></i>
-   			</div>
-
-   			<h5>Call Me At</h5>
-
-   			<p>Phone: (+63) 555 1212<br>
-			   	Mobile: (+63) 555 0100<br>
-			     	Fax: (+63) 555 0101
-			   </p>
-
-   		</div>
-
-   	</div> <!-- /contact-info -->
-
-	</section> <!-- /contact -->
-
-
-   <!-- footer
-   ================================================== -->
-
-   <footer>
-     	<div class="row">
-
-     		<div class="col-six tab-full pull-right social">
-
-     			<ul class="footer-social">
-			      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-			      <li><a href="#"><i class="fa fa-behance"></i></a></li>
-			      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-			      <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-			      <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-			   </ul>
-
-	      </div>
-
-      	<div class="col-six tab-full">
-	      	<div class="copyright">
-		        	<span>© Copyright Kards 2016.</span>
-		        	<span>Design by <a href="http://www.styleshout.com/">styleshout</a></span>
-		         </div>
-	      	</div>
-
-	      	<div id="go-top">
-		         <a class="smoothscroll" title="Back to Top" href="#top"><i class="fa fa-long-arrow-up"></i></a>
-		      </div>
-
-      	</div> <!-- /row -->
-   </footer>
+{% include 'footer.html' %}
 
    <div id="preloader">
     	<div id="loader"></div>
@@ -1018,6 +724,41 @@
    <script src="/static/js/jquery-2.1.3.min.js"></script>
    <script src="/static/js/plugins.js"></script>
    <script src="/static/js/main.js"></script>
+
+
+
+   <script>
+   // Set the date we're counting down to
+   var countDownDate = new Date("Mar 8, 2018 07:30:25").getTime();
+
+   // Update the count down every 1 second
+   var x = setInterval(function() {
+
+     // Get todays date and time
+     var now = new Date().getTime();
+
+     // Find the distance between now an the count down date
+     var distance = countDownDate - now;
+
+     // Time calculations for days, hours, minutes and seconds
+     var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+     var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+     // Display the result in the element with id="demo"
+     document.getElementById("cdown").innerHTML = days + "d " + hours + "h "
+     + minutes + "m " + seconds + "s ";
+
+     // If the count down is finished, write some text
+     if (distance < 0) {
+       clearInterval(x);
+       document.getElementById("demo").innerHTML = "EXPIRED";
+     }
+   }, 1000);
+   </script>
+
+
 
 </body>
 
