@@ -26,18 +26,11 @@ def events_all():
     json1_str = requests.get(url)
     json1_data = json.loads(json1_str.text)["data"]
     j1 = json1_data[:len(json1_data)]
+    print str(j1)
     return render_template('events.html',events1=j1, title="All Events")
 
 # Here goes the code for the rest of the pages
 
-
-@app.route('/contact')
-def contact():
-    return render_template('contact.html')
-
-@app.route('/about')
-def about():
-    return render_template('about.html')
 
 @app.errorhandler(404)
 def page_not_found(e):
