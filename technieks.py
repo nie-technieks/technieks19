@@ -39,6 +39,14 @@ def contact():
 def about():
     return render_template('about.html')
 
+@app.route('/hackathon/')
+def hackathon():
+    return redirect('https://docs.google.com/forms/d/e/1FAIpQLSdy0PTBTJmAklzPThYgb78GlT9QzYI8oPsZ4DF8HjfyKnnTzg/viewform?usp=sf_link')
+
+@app.route('/marathon/')
+def marathon():
+    return redirect('#')
+
 @app.errorhandler(404)
 def page_not_found(e):
     return "error"
