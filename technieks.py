@@ -28,7 +28,18 @@ def events_all():
     j1 = json1_data[:len(json1_data)]
     return render_template('events.html',events1=j1, title="All Events")
 
-# Here goes the code for the rest of the pages
+@app.route('/events1')
+def test_events():
+    url = 'https://graph.facebook.com/v2.8/' + 'techNIEks/events' \
+    + '?fields=id%2Cname%2Ccover%2Cstart_time%2Cdescription%2Cplace%2Cticket_uri' \
+    + '&access_token=1327383467301154%7CYDfQ94wTelbffydG5XrnanHnqu0'
+    print url
+    json1_str = requests.get(url)
+    json1_data = json.loads(json1_str.text)["data"]
+    j1 = json1_data[:len(json1_data)]
+    return render_template('events1.html',events1=j1, title="All Events")
+
+
 
 
 @app.route('/contact')
