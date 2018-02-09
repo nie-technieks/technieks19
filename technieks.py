@@ -56,7 +56,11 @@ def hackathon():
 
 @app.route('/marathon/')
 def marathon():
-    return redirect('#')
+    return redirect('https://www.payumoney.com/events/#/buyTickets/technieksmarathon18')
+
+@app.route('/youtube/')
+def youtube():
+    return redirect('https://www.youtube.com/channel/UC0Ky30GAIfdtGccczVNUIqA')
 
 @app.errorhandler(404)
 def page_not_found(e):
