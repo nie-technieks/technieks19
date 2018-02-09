@@ -26,7 +26,7 @@ def events_all():
     json1_str = requests.get(url)
     json1_data = json.loads(json1_str.text)["data"]
     j1 = json1_data[:len(json1_data)]
-    return render_template('events.html',events1=j1, title="All Events")
+    return render_template('events2.html',events1=j1, title="All Events")
 
 @app.route('/events1')
 def test_events():
