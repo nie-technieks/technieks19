@@ -62,6 +62,11 @@ def marathon():
 def youtube():
     return redirect('https://www.youtube.com/channel/UC0Ky30GAIfdtGccczVNUIqA')
 
+
+@app.route('/cyclothon/')
+def cyclathon():
+    return redirect('https://www.payumoney.com/events/#/buyTickets/cyclothon2018')
+
 @app.errorhandler(404)
 def page_not_found(e):
     return "error"
