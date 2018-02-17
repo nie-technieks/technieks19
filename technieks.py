@@ -3,8 +3,19 @@ import requests
 import json
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
+from flask_mail import Mail,Message
 
 app = Flask(__name__)
+app.config.update(
+    MAIL_SERVER='smtp.zoho.com',
+    MAIL_PORT=465,
+    MAIL_USE_SSL=True,
+    MAIL_USERNAME = 'info@technieks.in',
+    MAIL_PASSWORD = 'technieks.email'
+)
+mail = Mail(app)
+
+
 
 @app.route('/')
 @app.route('/index.html/')
@@ -66,6 +77,23 @@ def youtube():
 @app.route('/cyclothon/')
 def cyclathon():
     return redirect('https://www.payumoney.com/events/#/buyTickets/cyclothon2018')
+
+@app.route('/contactform/',  methods=['GET', 'POST'])
+def contactform():
+    try:
+        contactName=request.form['contactName']
+        contactEmail=request.form['contactEmail']
+        contactSubject=request.form['contactSubject']
+        contactMessage=request.form['contactMessage']
+        body="Name: "+contactName+"\nEmail: "+contactEmail+"\nSubject: "+contactSubject+"\nMessage: "+contactMessage
+        msg = Message(subject="Contact Form Entry",body=body, sender=(contactName,"info@technieks.in"), recipients=["info@technieks.in","milanmenezes@gmail.com","technieks.nie18@gmail.com"])
+        mail.send(msg)
+        body1="Dear "+contactName+",\n\nThankyou you for reaching out to us, we have received the following data:\n\n"+"Name: "+contactName+"\nEmail: "+contactEmail+"\nSubject: "+contactSubject+"\nMessage: "+contactMessage+"\n\nWe will get back to you soon.\n\nRegards,\nTeam techNIEks"
+        msg1 = Message(subject="Contact techNIEks",body=body1, sender=("techNIEks","info@technieks.in"), recipients=[contactEmail])
+        mail.send(msg1)
+        return "OK"
+    except:
+        return "Error"
 
 @app.errorhandler(404)
 def page_not_found(e):
