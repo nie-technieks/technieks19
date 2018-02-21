@@ -50,6 +50,14 @@ def test_events():
     e2 = json1_data[-20:]
     return render_template('events3.html',events1=e1, events2=e2, title="All Events")
 
+@app.route('/gallery/')
+def gallery():
+    url = 'https://graph.facebook.com/v2.12/720663717966776?fields=photos.fields(source).limit(100)&access_token=EAACEdEose0cBAPSte2ekBClwqRgvZBZCwYOTRuiW8OyKE58WXfnhaKPPXfgzAqMaJahC54wj1neU40r6QULFXW3LVXZCOIT9H9op9LoqUojulOtZBb1QXCMjj2Yoo1RMXJYcUL7lGUDaTM7sZC7lzynZCHGrEjnsMLU0QEoEhqFqBNmZCiQDXIQ97d3GwZAZB4s0ZD'
+    print url
+    json1_str = requests.get(url)
+    data = json.loads(json1_str.text)["photos"]["data"]
+    return render_template('gallery.html',events1=data, title="Gallery")
+
 
 
 
@@ -95,9 +103,10 @@ def contactform():
     except:
         return "Error"
 
+
 @app.errorhandler(404)
 def page_not_found(e):
     return "error"
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=8080, debug=True)
+    app.run(host='0.0.0.0', port=8080)

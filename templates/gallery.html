@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- basic page needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>techNIEks</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+   <!-- mobile specific metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <!-- Chrome, Firefox OS and Opera -->
+<meta name="theme-color" content="#161616">
+<!-- Windows Phone -->
+<meta name="msapplication-navbutton-color" content="#161616">
+<!-- iOS Safari -->
+<meta name="apple-mobile-web-app-status-bar-style" content="#161616">
+
+ 	<!-- CSS
+   ================================================== -->
+   <link rel="stylesheet" href="/static/css/base.css">
+   <link rel="stylesheet" href="/static/css/main.css">
+   <link rel="stylesheet" href="/static/css/vendor.css">
+   <link rel="stylesheet" href="/static/css/table.css">
+   <!-- <link rel="stylesheet" href="/static/css/sponsors.css"> -->
+
+
+   <!-- script
+   ================================================== -->
+	<script src="/static/js/modernizr.js"></script>
+	<script src="/static/js/pace.min.js"></script>
+
+   <!-- favicons
+	================================================== -->
+	<link rel="icon" type="image/png" href="/static/images/favicon.png">
+
+</head>
+
+<body id="top">
+
+	<!-- header
+   ================================================== -->
+   <header>
+   	<div class="row">
+
+   		<div class="top-bar" >
+   			<a class="menu-toggle" href="#"><span></span></a>
+
+   				<div class="logo menu-toggle">
+		         <a href=""><h2 style="color: white;">MENU</h2></a>
+		      </div>
+
+          {% include 'nav.html' %}
+   		</div> <!-- /top-bar -->
+
+   	</div> <!-- /row -->
+   </header> <!-- /header -->
+
+	<!-- intro section
+   ================================================== -->
+   <section id="intro">
+
+   	<div class="intro-overlay"></div>
+
+   	<div class="intro-content">
+   		<div class="row">
+
+   			<div class="col-twelve">
+
+          <center>
+	   			     <img src="{{ url_for('static', filename='images/technieks.png') }}" style="width:400px;">
+          </center>
+
+	   			<a class="button stroke smoothscroll" href="/about" title="">More About Us</a>
+
+	   		</div>
+
+   		</div>
+   	</div> <!-- /intro-content -->
+
+   	<ul class="intro-social">
+             <li><a href="https://www.facebook.com/technieks"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="https://www.instagram.com/technieks_2018/"><i class="fa fa-instagram"></i></a></li>
+         <li><a href="https://www.youtube.com/channel/UC0Ky30GAIfdtGccczVNUIqA"><i class="fa fa-youtube"></i></a></li>
+
+      </ul> <!-- /intro-social -->
+
+   </section> <!-- /intro -->
+
+
+	<!-- Portfolio Section
+   ================================================== -->
+	<section id="portfolio">
+
+		<div class="row section-intro spons-top">
+   		<div class="col-twelve">
+
+   			<h1>Gallery</h1>
+   			<h5>New Pictures</h5>
+
+   		</div>
+   	</div> <!-- /section-intro-->
+
+   	<div class="row portfolio-content">
+
+   		<div class="col-twelve">
+
+   			<!-- portfolio-wrapper -->
+	         <div id="folio-wrapper" class="block-1-3 block-mob-full stack">
+
+	         	{% for x in events1 %}
+
+	         	<div class="bgrid folio-item">
+	               <div class="item-wrap" style="padding: 5%;">
+	               	<img src="{{ x["source"] }}" alt="{{ x["id"] }}">
+	                  <a href="{{ "#m"+x["id"] }}" class="overlay">
+	                     <div class="folio-item-table">
+	                     	<div class="folio-item-cell">
+		     					       <!-- <h3 class="folio-title">Enlarge</h3> -->
+		     					    	 
+		     					   </div>
+	                     </div>
+	                  </a>
+	               </div>
+                 <!-- <br> -->
+	        		</div> <!-- /folio-item -->
+
+	        		<div id="{{ "m"+x["id"] }}" class="popup-modal slider mfp-hide">
+
+				     	<div class="media">
+				     		<center><img src="{{ x["source"] }}" alt="{{ x["id"] }}" style="width: 100%;" /></center>
+				     	</div>
+<!-- 
+					   <div class="description-box">
+					      <h4>{{ x["name"] }}</h4>
+					      <p>{{ x["description"] | replace('\n','<br>' | safe)}}</p>
+
+					      
+					   </div>
+
+			         <div class="link-box">
+			         	{% if 'ticket_uri' in x %}
+			            <a href="{{ x['ticket_uri'] }}" target="_blank">Register</a>
+			            {% endif %}
+					      <a href="#" class="popup-modal-dismiss">Close</a>
+			         </div> -->
+
+				   </div> <!-- /modal-01 -->
+
+				   {% endfor %}
+
+	        		
+
+	         </div> <!-- /portfolio-wrapper -->
+
+   		</div>  <!-- /twelve -->
+
+   	</div> <!-- /portfolio-content -->
+
+
+	</section> <!-- /portfolio -->
+
+
+	<!-- stats Section
+   ================================================== -->
+	<section id="stats" class="count-up">
+
+		<div class="row">
+			<div class="cols-one">
+
+
+
+					<div class="bgrid stat" style="float:none; margin:10px auto;">
+
+						<img src="{{ url_for('static', filename='images/technieks.png') }}" width="180px">
+
+						<h3 class="stat-count2" id="cdown">
+							1500
+						</h3>
+
+						<h5 class="stat-title">
+							Days to go
+						</h5>
+
+					</div> <!-- /stat -->
+
+
+			</div> <!-- /twelve -->
+		</div> <!-- /row -->
+
+	</section> <!-- /stats -->
+
+
+{% include 'footer.html' %}
+
+   <div id="preloader">
+    	<div id="loader"></div>
+   </div>
+
+   <!-- Java Script
+   ================================================== -->
+   <script src="/static/js/jquery-2.1.3.min.js"></script>
+   <script src="/static/js/plugins.js"></script>
+   <script src="/static/js/main.js"></script>
+
+
+   <script>
+   // Set the date we're counting down to
+   var countDownDate = new Date("Mar 8, 2018 07:30:25").getTime();
+
+   // Update the count down every 1 second
+   var x = setInterval(function() {
+
+     // Get todays date and time
+     var now = new Date().getTime();
+
+     // Find the distance between now an the count down date
+     var distance = countDownDate - now;
+
+     // Time calculations for days, hours, minutes and seconds
+     var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+     var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+     // Display the result in the element with id="demo"
+     document.getElementById("cdown").innerHTML = days + "d " + hours + "h "
+     + minutes + "m " + seconds + "s ";
+
+     // If the count down is finished, write some text
+     if (distance < 0) {
+       clearInterval(x);
+       document.getElementById("demo").innerHTML = "EXPIRED";
+     }
+   }, 1000);
+   </script>
+
+
+
+
+</body>
+
+</html>
