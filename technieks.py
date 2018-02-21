@@ -52,11 +52,15 @@ def test_events():
 
 @app.route('/gallery/')
 def gallery():
-    url = 'https://graph.facebook.com/v2.12/720663717966776?fields=photos.fields(source).limit(100)&access_token=EAACEdEose0cBAPSte2ekBClwqRgvZBZCwYOTRuiW8OyKE58WXfnhaKPPXfgzAqMaJahC54wj1neU40r6QULFXW3LVXZCOIT9H9op9LoqUojulOtZBb1QXCMjj2Yoo1RMXJYcUL7lGUDaTM7sZC7lzynZCHGrEjnsMLU0QEoEhqFqBNmZCiQDXIQ97d3GwZAZB4s0ZD'
-    print url
+    url = 'https://graph.facebook.com/v2.12/720663717966776?fields=photos.fields(source).limit(100)&access_token=EAACEdEose0cBACV9ptwrIPvmzZBZCa8OiooNBi77x6Sbf7h8Vbh4JpFutIYOzlMZA50JSiYR0ZBy7PWvIuHk1SWeI0nZBqKzSI6Q0BoxawLyZCN2KnZAz5Vbjs71wdxKQi5wntXwCnvYLPf6fCZCjPuVYjMHwYO4rZAPhFwoMTPtcxjQ69hv9JYOtw6ag1vqdzvIZD'
     json1_str = requests.get(url)
-    data = json.loads(json1_str.text)["photos"]["data"]
-    return render_template('gallery.html',events1=data, title="Gallery")
+    jdata = json.loads(json1_str.text)["photos"]
+    data = jdata["data"]
+    while "next" in jdata["paging"].keys():
+        json1_str = requests.get(jdata["paging"]["next"])
+        jdata = json.loads(json1_str.text)
+        data.extend(jdata["data"])
+    return render_template('gallery.html',events1=data[:-473], title="Gallery")
 
 
 
