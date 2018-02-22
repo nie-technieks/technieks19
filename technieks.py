@@ -52,7 +52,7 @@ def test_events():
 
 @app.route('/gallery/')
 def gallery():
-    url = 'https://graph.facebook.com/v2.12/720663717966776?fields=photos.fields(source).limit(100)&access_token=EAAJdRvAS6WUBADZAErvAMGr7qNTCShSNqR2NWYVZB80fVG3VIzBOCMnPcune9JOLvShcUKZBQ29YA4KQT4y6eS5MYqbBoYJHer58BINZATmAGHjajHEpRN66ZBZCE2ovhZB1zWu8DU0zdQzjccPW0BlVTdivKGkyd3GE44VycN7FwQ4GZBO9hYieWWsdTkkYWcVG8UeAFhvGJTPQRdAbrsmE0bUMr8aLIq4ZD'
+    url = 'https://graph.facebook.com/v2.12/720663717966776?fields=photos.fields(source).limit(100)&access_token=1327383467301154%7CYDfQ94wTelbffydG5XrnanHnqu0'
     json1_str = requests.get(url)
     jdata = json.loads(json1_str.text)["photos"]
     data = jdata["data"]
