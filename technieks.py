@@ -43,7 +43,6 @@ def test_events():
     url = 'https://graph.facebook.com/v2.8/' + 'techNIEks/events' \
     + '?fields=id%2Cname%2Ccover%2Cstart_time%2Cdescription%2Cplace%2Cticket_uri' \
     + '&access_token=1327383467301154%7CYDfQ94wTelbffydG5XrnanHnqu0'
-    print url
     json1_str = requests.get(url)
     json1_data = json.loads(json1_str.text)["data"]
     e1 = json1_data[:-20]
