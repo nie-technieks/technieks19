@@ -1,3 +1,10 @@
+# Technieks18
+**Website url: [`http://www.technieks.in/`](http://www.technieks.in/)**
+
+
+----------
+
+
 # Who are We?
 
 The National Institute of Engineering, Mysuru is amongst the premier Engineering
@@ -14,3 +21,4 @@ techNIEks is a 3-Day national level techno-cultural extravaganza organized by NI
  - Milan Menezes
  - Mridul Ganga
  - Ramprasad Agarwal
+
