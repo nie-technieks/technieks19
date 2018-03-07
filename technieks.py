@@ -1,11 +1,11 @@
-from flask import Flask, g, render_template, request, redirect
+from flask import Flask, g, render_template, request, redirect, send_from_directory
 import requests
 import json
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from flask_mail import Mail,Message
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static')
 app.config.update(
     MAIL_SERVER='smtp.zoho.com',
     MAIL_PORT=465,
@@ -16,6 +16,9 @@ app.config.update(
 mail = Mail(app)
 
 
+@app.route('/sitemap.xml')
+def static_from_root():
+    return send_from_directory(app.static_folder, request.path[1:])
 
 @app.route('/')
 @app.route('/index.html/')
@@ -109,7 +112,7 @@ def contactform():
 
 @app.errorhandler(404)
 def page_not_found(e):
-    return "error"
+    return render_template("404.html")
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8080)
