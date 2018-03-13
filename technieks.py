@@ -75,22 +75,22 @@ def contact():
 def about():
     return render_template('about.html')
 
-@app.route('/hackathon/')
-def hackathon():
-    return redirect('https://docs.google.com/forms/d/e/1FAIpQLSdy0PTBTJmAklzPThYgb78GlT9QzYI8oPsZ4DF8HjfyKnnTzg/viewform?usp=sf_link')
+# @app.route('/hackathon/')
+# def hackathon():
+#     return redirect('https://docs.google.com/forms/d/e/1FAIpQLSdy0PTBTJmAklzPThYgb78GlT9QzYI8oPsZ4DF8HjfyKnnTzg/viewform?usp=sf_link')
 
-@app.route('/marathon/')
-def marathon():
-    return redirect('https://www.payumoney.com/events/#/buyTickets/technieksmarathon18')
+# @app.route('/marathon/')
+# def marathon():
+#     return redirect('https://www.payumoney.com/events/#/buyTickets/technieksmarathon18')
 
 @app.route('/youtube/')
 def youtube():
     return redirect('https://www.youtube.com/channel/UC0Ky30GAIfdtGccczVNUIqA')
 
 
-@app.route('/cyclothon/')
-def cyclathon():
-    return redirect('https://www.payumoney.com/events/#/buyTickets/cyclothon2018')
+# @app.route('/cyclothon/')
+# def cyclathon():
+#     return redirect('https://www.payumoney.com/events/#/buyTickets/cyclothon2018')
 
 @app.route('/contactform/',  methods=['GET', 'POST'])
 def contactform():
