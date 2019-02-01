@@ -7,6 +7,7 @@ from flask_mail import Mail,Message
 
 f=open('passwords.json')
 mail_pass=json.load(f)['zoho']
+f.close()
 
 app = Flask(__name__, static_folder='static')
 app.config.update(
