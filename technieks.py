@@ -5,13 +5,16 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from flask_mail import Mail,Message
 
+f=open('passwords.json')
+mail_pass=json.load(f)['zoho']
+
 app = Flask(__name__, static_folder='static')
 app.config.update(
     MAIL_SERVER='smtp.zoho.com',
     MAIL_PORT=465,
     MAIL_USE_SSL=True,
     MAIL_USERNAME = 'info@technieks.in',
-    MAIL_PASSWORD = 'technieks.email'
+    MAIL_PASSWORD = mail_pass
 )
 mail = Mail(app)
 
@@ -24,7 +27,7 @@ def static_from_root():
 @app.route('/index.html/')
 def index():
     scope = ['https://spreadsheets.google.com/feeds']
-    credentials = ServiceAccountCredentials.from_json_keyfile_name('technieks18.json', scope)
+    credentials = ServiceAccountCredentials.from_json_keyfile_name('technieks19.json', scope)
     gc = gspread.authorize(credentials)
     wks = gc.open_by_key('10pB43SvGbIWX0LEGaRfkYe1XYa_bw-OvlvdUgj-66gQ').sheet1
     sdata = wks.get_all_values()
