@@ -1,5 +1,5 @@
 # Technieks18
-**Website url: [`http://www.technieks.in/`](http://www.technieks.in/)**
+**Website url: [`https://www.technieks.in/`](https://www.technieks.in/)**
 
 
 ----------
@@ -19,6 +19,8 @@ techNIEks is a 3-Day national level techno-cultural extravaganza organized by NI
 # The Website Team:
 
  - Milan Menezes
- - Mridul Ganga
- - Ramprasad Agarwal
+ - Gunjan
+ - Vishruth
+ - Ramprasad
+ - Shriharsha
 
