@@ -1,0 +1,5 @@
+requests==2.18.4
+Flask==0.12.4
+gspread==3.1.0
+Flask_Mail==0.9.1
+google_api_python_client==1.7.8
