@@ -24,3 +24,11 @@ techNIEks is a 3-Day national level techno-cultural extravaganza organized by NI
  - Ramprasad
  - Shriharsha
 
+# Setting it up!
+
+1. Fork this repository (https://github.com/nie-technieks/technieks19)
+2. Clone the forked repository
+3. Add passwords.json and technieks19.json files to the root of downloaded repository
+   (Note : These files are already made available in the dedicated whatsapp group)
+4. In the console run : pip install -r requirements.txt (To install required dependencies )
+5. Finally to run the application locally : python technieks.py
