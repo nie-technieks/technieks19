@@ -37,39 +37,49 @@ def index():
 
 @app.route('/events')
 def events_all():
-    url = 'https://graph.facebook.com/v2.8/' + 'techNIEks/events' \
-    + '?fields=id%2Cname%2Ccover%2Cstart_time%2Cdescription%2Cplace%2Cticket_uri' \
-    + '&access_token=1327383467301154%7CYDfQ94wTelbffydG5XrnanHnqu0'
-    json1_str = requests.get(url)
-    json1_data = json.loads(json1_str.text)["data"]
-    e1 = json1_data[:-20]
-    return render_template('events1.html',events1=e1, title="New Events")
+    try:
+        url = 'https://graph.facebook.com/v2.8/' + 'techNIEks/events' \
+        + '?fields=id%2Cname%2Ccover%2Cstart_time%2Cdescription%2Cplace%2Cticket_uri' \
+        + '&access_token=1327383467301154%7CYDfQ94wTelbffydG5XrnanHnqu0'
+        json1_str = requests.get(url)
+        json1_data = json.loads(json1_str.text)["data"]
+        e1 = json1_data[:-20]
+        return render_template('events1.html',events1=e1, title="New Events")
+    except:
+        e1 = {}
+        return render_template('events1.html',events1=e1, title="New Events")
 
 @app.route('/events1')
 def test_events():
-    url = 'https://graph.facebook.com/v2.8/' + 'techNIEks/events' \
-    + '?fields=id%2Cname%2Ccover%2Cstart_time%2Cdescription%2Cplace%2Cticket_uri' \
-    + '&access_token=1327383467301154%7CYDfQ94wTelbffydG5XrnanHnqu0'
-    json1_str = requests.get(url)
-    json1_data = json.loads(json1_str.text)["data"]
-    e1 = json1_data[:-20]
-    e2 = json1_data[-20:]
-    return render_template('events3.html',events1=e1, events2=e2, title="All Events")
+    try:
+        url = 'https://graph.facebook.com/v2.8/' + 'techNIEks/events' \
+        + '?fields=id%2Cname%2Ccover%2Cstart_time%2Cdescription%2Cplace%2Cticket_uri' \
+        + '&1327383467301154%7CYDfQ94wTelbffydG5XrnanHnqu0'
+        json1_str = requests.get(url)
+        json1_data = json.loads(json1_str.text)["data"]
+        e1 = json1_data[:-20]
+        e2 = json1_data[-20:]
+        return render_template('events3.html',events1=e1, events2=e2, title="All Events")
+    except:
+        e1 = {}
+        e2 = {}
+        return render_template('events3.html',events1=e1, events2=e2, title="All Events")
 
 @app.route('/gallery/')
 def gallery():
-    url = 'https://graph.facebook.com/v2.12/720663717966776?fields=photos.fields(source).limit(100)&access_token=1327383467301154%7CYDfQ94wTelbffydG5XrnanHnqu0'
-    json1_str = requests.get(url)
-    jdata = json.loads(json1_str.text)["photos"]
-    data = jdata["data"]
-    while "next" in jdata["paging"].keys():
-        json1_str = requests.get(jdata["paging"]["next"])
-        jdata = json.loads(json1_str.text)
-        data.extend(jdata["data"])
-    return render_template('gallery.html',events1=data[:-473], title="Gallery")
-
-
-
+    try:
+        url = 'https://graph.facebook.com/v2.12/720663717966776?fields=photos.fields(source).limit(100)&access_token=1327383467301154%7CYDfQ94wTelbffydG5XrnanHnqu0'
+        json1_str = requests.get(url)
+        jdata = json.loads(json1_str.text)["photos"]
+        data = jdata["data"]
+        while "next" in jdata["paging"].keys():
+            json1_str = requests.get(jdata["paging"]["next"])
+            jdata = json.loads(json1_str.text)
+            data.extend(jdata["data"])
+        return render_template('gallery.html',events1=data[:-473], title="Gallery")
+    except:
+        data = {}
+        return render_template('gallery.html',events1=data, title="Gallery")
 
 @app.route('/contact')
 def contact():
