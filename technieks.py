@@ -80,6 +80,7 @@ def gallery():
         return render_template('gallery.html',events1=[], title="Gallery")
 
 
+
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
