@@ -46,8 +46,7 @@ def events_all():
         e1 = json1_data[:-20]
         return render_template('events1.html',events1=e1, title="New Events")
     except:
-        e1 = {}
-        return render_template('events1.html',events1=e1, title="New Events")
+        return render_template('events1.html',events1=[], title="New Events")
 
 @app.route('/events1')
 def test_events():
@@ -78,8 +77,8 @@ def gallery():
             data.extend(jdata["data"])
         return render_template('gallery.html',events1=data[:-473], title="Gallery")
     except:
-        data = {}
-        return render_template('gallery.html',events1=data, title="Gallery")
+        return render_template('gallery.html',events1=[], title="Gallery")
+
 
 @app.route('/contact')
 def contact():
@@ -129,4 +128,4 @@ def page_not_found(e):
     return render_template("404.html")
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=8080,debug=True)
+    app.run(host='0.0.0.0', port=8080)
