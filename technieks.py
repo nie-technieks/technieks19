@@ -37,13 +37,16 @@ def index():
 
 @app.route('/events')
 def events_all():
-    url = 'https://graph.facebook.com/v2.8/' + 'techNIEks/events' \
-    + '?fields=id%2Cname%2Ccover%2Cstart_time%2Cdescription%2Cplace%2Cticket_uri' \
-    + '&access_token=1327383467301154%7CYDfQ94wTelbffydG5XrnanHnqu0'
-    json1_str = requests.get(url)
-    json1_data = json.loads(json1_str.text)["data"]
-    e1 = json1_data[:-20]
-    return render_template('events1.html',events1=e1, title="New Events")
+    try:
+        url = 'https://graph.facebook.com/v2.8/' + 'techNIEks/events' \
+        + '?fields=id%2Cname%2Ccover%2Cstart_time%2Cdescription%2Cplace%2Cticket_uri' \
+        + '&access_token=1327383467301154%7CYDfQ94wTelbffydG5XrnanHnqu0'
+        json1_str = requests.get(url)
+        json1_data = json.loads(json1_str.text)["data"]
+        e1 = json1_data[:-20]
+        return render_template('events1.html',events1=e1, title="New Events")
+    except:
+        return render_template('events1.html',events1=[], title="New Events")
 
 @app.route('/events1')
 def test_events():
@@ -58,15 +61,18 @@ def test_events():
 
 @app.route('/gallery/')
 def gallery():
-    url = 'https://graph.facebook.com/v2.12/720663717966776?fields=photos.fields(source).limit(100)&access_token=1327383467301154%7CYDfQ94wTelbffydG5XrnanHnqu0'
-    json1_str = requests.get(url)
-    jdata = json.loads(json1_str.text)["photos"]
-    data = jdata["data"]
-    while "next" in jdata["paging"].keys():
-        json1_str = requests.get(jdata["paging"]["next"])
-        jdata = json.loads(json1_str.text)
-        data.extend(jdata["data"])
-    return render_template('gallery.html',events1=data[:-473], title="Gallery")
+    try:
+        url = 'https://graph.facebook.com/v2.12/720663717966776?fields=photos.fields(source).limit(100)&access_token=1327383467301154%7CYDfQ94wTelbffydG5XrnanHnqu0'
+        json1_str = requests.get(url)
+        jdata = json.loads(json1_str.text)["photos"]
+        data = jdata["data"]
+        while "next" in jdata["paging"].keys():
+            json1_str = requests.get(jdata["paging"]["next"])
+            jdata = json.loads(json1_str.text)
+            data.extend(jdata["data"])
+        return render_template('gallery.html',events1=data[:-473], title="Gallery")
+    except:
+        return render_template('gallery.html',events1=[], title="Gallery")
 
 
 
@@ -119,4 +125,4 @@ def page_not_found(e):
     return render_template("404.html")
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=8080,debug=True)
+    app.run(host='0.0.0.0', port=8080)
