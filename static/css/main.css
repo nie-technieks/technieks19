@@ -2183,7 +2183,9 @@ header .logo a {
  * -------------------------------------------------------------------
  */
 #stats {
-	background: #990047;
+	/* background: #990047; */
+	background-image: url("../images/intro-bg.jpg");
+	background-size: cover;
 	padding-top: 7.2rem;
 	padding-bottom: 6rem;
 	text-align: center;
