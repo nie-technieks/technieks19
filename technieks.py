@@ -34,6 +34,9 @@ def index():
     sdata = wks.get_all_values()
     return render_template('index.html',data=sdata[1:])
 
+@app.route('/technieks-run')
+def technieks_run():
+    return redirect("http://yepdesk.com/technieks-run", code=302)
 
 @app.route('/events')
 def events_all():
