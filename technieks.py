@@ -114,7 +114,7 @@ def contactform():
         contactSubject=request.form['contactSubject']
         contactMessage=request.form['contactMessage']
         body="Name: "+contactName+"\nEmail: "+contactEmail+"\nSubject: "+contactSubject+"\nMessage: "+contactMessage
-        msg = Message(subject="Contact Form Entry",body=body, sender=(contactName,"info@technieks.in"), recipients=["info@technieks.in","milanmenezes@gmail.com","technieks.nie18@gmail.com"])
+        msg = Message(subject="Contact Form Entry",body=body, sender=(contactName,"info@technieks.in"), recipients=["info@technieks.in","milanmenezes@gmail.com","technieks.2019@gmail.com"])
         mail.send(msg)
         body1="Dear "+contactName+",\n\nThankyou you for reaching out to us, we have received the following data:\n\n"+"Name: "+contactName+"\nEmail: "+contactEmail+"\nSubject: "+contactSubject+"\nMessage: "+contactMessage+"\n\nWe will get back to you soon.\n\nRegards,\nTeam techNIEks"
         msg1 = Message(subject="Contact techNIEks",body=body1, sender=("techNIEks","info@technieks.in"), recipients=[contactEmail])
