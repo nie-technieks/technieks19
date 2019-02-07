@@ -13,12 +13,12 @@ d<!DOCTYPE html>
    ================================================== -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css?v=1.1" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <!--- basic page needs
    ================================================== -->
 
 
-   <link rel="stylesheet" href="/static/css/events.css">
+   <link rel="stylesheet" href="/static/css/events.css?v=1.1">
 
 
    <!-- favicons
@@ -33,40 +33,6 @@ d<!DOCTYPE html>
 
 
 {% for x in events1 %}
-<!--
-  <div class="panel panel-default">
-    <div class="panel-heading"><b style="font-size:1.2em;">{{ x["name"] }} </b>on {{ x["start_time"][:10] }}</div>
-    <div class="panel-body">
-      <img src="{{ x["cover"]["source"] }}" alt="" style="width: calc(100% + 30px); margin:-15px;">
-    </div>
-    <div class="panel-footer">
-      {% if 'ticket_uri' in x %}
-      <a href="{{ x['ticket_uri'] }}" class="btn btn-sm btn-default">Register</a>
-      {% endif %}
-      <a href="#" class="btn btn-sm btn-info" data-toggle="modal" data-target="#{{x['id']}}">Details</a>
-    </div>
-  </div> -->
-
-
-            <!-- Modal -->
- <!--  <div class="modal fade" id="{{ x["id"] }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">{{ x["name"] }}</h4>
-        </div>
-        <div class="modal-body">
-          {{ x["description"] | replace('\n','<br>' | safe) }}
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
-
 
             <div class="col-sm-6 col-md-4 col-lg-4 mt-4">
                 <div class="card card-inverse card-info">
@@ -93,9 +59,9 @@ d<!DOCTYPE html>
         </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js?v=1.1" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js?v=1.1/1.12.9/umd/popper.min.js?v=1.1" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js?v=1.1" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </body>
 </html>
