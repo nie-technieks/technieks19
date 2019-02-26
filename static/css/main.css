@@ -2625,3 +2625,19 @@ footer .copyright span:last-child::after {
 #selected h1{
 	color: #E1E1E1;
 }
+.pagination{
+	text-align: center;
+	margin-top: 50px;
+}
+.pageButton{
+
+	background: #E1E1E1;
+	color: black;
+	padding: 8px;
+	margin: 5px;
+	cursor: pointer;
+}
+#pageButtonSelected {
+	background: #cc005f;
+	color: #E1E1E1;
+}
