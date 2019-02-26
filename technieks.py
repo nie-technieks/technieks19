@@ -44,15 +44,24 @@ def technieks_run():
 @app.route('/events')
 def events_all():
     try:
-        url = 'https://graph.facebook.com/v2.8/' + 'techNIEks/events' \
-        + '?fields=id%2Cname%2Ccover%2Cstart_time%2Cdescription%2Cplace%2Cticket_uri' \
-        + '&access_token=1327383467301154%7CYDfQ94wTelbffydG5XrnanHnqu0'
-        json1_str = requests.get(url)
-        json1_data = json.loads(json1_str.text)["data"]
-        e1 = json1_data[:-20]
-        return render_template('events1.html',events1=e1, title="New Events")
+        # to generate past and present files manually, follow this :
+        # url = 'https://graph.facebook.com/v2.8/' + 'techNIEks/events' \
+        # + '?fields=id%2Cname%2Ccover%2Cstart_time%2Cdescription%2Cplace%2Cticket_uri' \
+        # + '&access_token=EAAWnWNp4iZBIBAKvoZA1kmIEivqNTyjsjuq1ZAYZBfXwYdEcLJbm2NzhMLNo4OjpXUewsxphNn6297ZA8OsMnhp8PGzN1pXqdF5kJOz79xhTLZAJfnAXAADZAzUZCEwyAXiF2NhD31ZBfZCHkCZAtppPeGtbOVgeEtTyPc3yDwllzTXsh0mCab8YZA76mOnY0Dgeik5nAFw9S9rPogZDZD'
+        # json1_str = requests.get(url)
+        # json1_data = json.loads(json1_str.text)["data"]
+        # e1 = json1_data[0:n] , where n is the no of new events
+        # e2 = json1_data[:-7] , past 7 events
+        # with open('present.json', 'w') as pastfile:
+        #     json.dump(json1_data, pastfile)
+        with open('past.json', 'r') as pastfile:
+            past = json.load(pastfile)
+        with open('present.json', 'r') as presentfile:
+            present = json.load(presentfile)
+        return render_template('events1.html', events1 = present , past = past, title="New Events")
     except:
         return render_template('events1.html',events1=[], title="New Events")
+
 
 @app.route('/events1')
 def test_events():
