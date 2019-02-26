@@ -76,8 +76,8 @@ def test_events():
         e2 = {}
         return render_template('events3.html',events1=e1, events2=e2, title="All Events")
 
-@app.route('/gallery/')
-def gallery():
+@app.route('/gallery/<int:year>')
+def gallery(year):
     try:
         url = 'https://graph.facebook.com/v2.12/720663717966776?fields=photos.fields(source).limit(100)&access_token=1327383467301154%7CYDfQ94wTelbffydG5XrnanHnqu0'
         json1_str = requests.get(url)
@@ -87,7 +87,13 @@ def gallery():
             json1_str = requests.get(jdata["paging"]["next"])
             jdata = json.loads(json1_str.text)
             data.extend(jdata["data"])
-        return render_template('gallery.html',events1=data[:-473], title="Gallery")
+        if year==2018:
+            return render_template('gallery.html',events1=data[-823:-473], title="Gallery",year=2018)
+        elif year==2019:
+            return render_template('gallery.html',events1=data[:-823], title="Gallery",year=2019)
+        else:
+            return render_template('404.html')
+
     except:
         return render_template('gallery.html',events1=[], title="Gallery")
 
