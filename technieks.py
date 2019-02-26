@@ -59,6 +59,7 @@ def events_all():
     except:
         return render_template('events1.html',events1=[], title="New Events")
 
+
 @app.route('/events1')
 def test_events():
     try:
