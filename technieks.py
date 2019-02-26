@@ -118,7 +118,7 @@ def gallery(year):
         return render_template('gallery.html',events1=data[lowerLimitAtCurrentPage:upperLimitAtCurrentPage], title="Gallery",year=year,pages=noOfPages, currentPage=currentPage)    
 
     except:
-        return render_template('gallery.html',events1=[], title="Gallery",year=2019,pages=0)
+        return render_template('gallery.html',events1=[], title="Gallery",year=2019,pages=0,currentPage=0)
 
 
 
