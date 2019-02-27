@@ -2599,3 +2599,45 @@ footer .copyright span:last-child::after {
 }
 
 /*# sourceMappingURL=main.css.map */
+/* Gallery CSS */
+
+.galleryYearNav{
+	text-align: center;
+
+}
+.galleryYearNav div {
+	box-sizing: border-box;
+	background: #E1E1E1;
+	cursor: pointer;
+	transition: all 0.3s linear;
+	
+}
+.galleryYearNav div:hover {	
+	background: #cc005f;
+}
+
+.galleryYearNav div:hover h1 {	
+	color: #E1E1E1;
+}
+#selected{
+	background: #cc005f;
+}
+#selected h1{
+	color: #E1E1E1;
+}
+.pagination{
+	text-align: center;
+	margin-top: 50px;
+}
+.pageButton{
+
+	background: #E1E1E1;
+	color: black;
+	padding: 8px;
+	margin: 5px;
+	cursor: pointer;
+}
+#pageButtonSelected {
+	background: #cc005f;
+	color: #E1E1E1;
+}

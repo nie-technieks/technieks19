@@ -4,6 +4,9 @@ import json
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from flask_mail import Mail,Message
+import math
+
+
 
 f=open('passwords.json')
 mail_pass=json.load(f)['zoho']
@@ -76,9 +79,10 @@ def test_events():
         e2 = {}
         return render_template('events3.html',events1=e1, events2=e2, title="All Events")
 
-@app.route('/gallery/')
-def gallery():
+@app.route('/gallery/<int:year>')
+def gallery(year):
     try:
+        
         url = 'https://graph.facebook.com/v2.12/720663717966776?fields=photos.fields(source).limit(100)&access_token=1327383467301154%7CYDfQ94wTelbffydG5XrnanHnqu0'
         json1_str = requests.get(url)
         jdata = json.loads(json1_str.text)["photos"]
@@ -87,9 +91,34 @@ def gallery():
             json1_str = requests.get(jdata["paging"]["next"])
             jdata = json.loads(json1_str.text)
             data.extend(jdata["data"])
-        return render_template('gallery.html',events1=data[:-473], title="Gallery")
+        
+        if(year==2019):
+            startFromImage = 0
+            noOfImagesToBeRemoved  = 823
+        elif(year==2018):
+            startFromImage = len(data)-823
+            noOfImagesToBeRemoved  = 473
+        else:
+            return render_template('404.html')
+        data = data[startFromImage:-noOfImagesToBeRemoved]
+        noOfImages = len(data)
+        imagesPerPage = 20
+        noOfPages = math.ceil(noOfImages/imagesPerPage)
+        if(request.args.get('page')==None):
+            currentPage = 1
+        else:
+            currentPage = int(request.args.get('page'))    
+        lowerLimitAtCurrentPage = (currentPage-1)*20
+        if(currentPage*20>noOfImages):
+            upperLimitAtCurrentPage = noOfImages
+        else:
+            upperLimitAtCurrentPage = currentPage*20
+        
+        
+        return render_template('gallery.html',events1=data[lowerLimitAtCurrentPage:upperLimitAtCurrentPage], title="Gallery",year=year,pages=noOfPages, currentPage=currentPage)    
+
     except:
-        return render_template('gallery.html',events1=[], title="Gallery")
+        return render_template('gallery.html',events1=[], title="Gallery",year=2019,pages=0,currentPage=0)
 
 
 
