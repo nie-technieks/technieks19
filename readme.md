@@ -39,4 +39,9 @@ techNIEks is a 3-Day national level techno-cultural extravaganza organized by NI
    (Note : These files are already made available in the dedicated whatsapp group)
 3. In the console run : pip install -r requirements.txt (To install required dependencies )
 4. Finally to run the application locally : python technieks.py
-Demo-link : https://technieks-19.herokuapp.com/
+
+# Hosting:
+
+- The master branch is hosted at (https://technieks.in)
+- The dev branch is hosted at (https://beta.technieks.in)
+- The event will be live streamed at (https://technieks.in/live)
