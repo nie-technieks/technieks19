@@ -94,8 +94,6 @@ def gallery(year):
     with open('images.json') as f:
         data = json.load(f)
 
-
-
     if(year==2019):
         startFromImage = 0
         noOfImagesToBeRemoved  = 823
@@ -107,7 +105,7 @@ def gallery(year):
     data = data[startFromImage:-noOfImagesToBeRemoved]
     noOfImages = len(data)
     imagesPerPage = 20
-    noOfPages = math.ceil(noOfImages/imagesPerPage)
+    noOfPages = int(math.ceil(noOfImages/imagesPerPage))
     if(request.args.get('page')==None):
         currentPage = 1
     else:
