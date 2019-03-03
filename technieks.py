@@ -32,11 +32,11 @@ def onesignalfirst():
     return send_from_directory(app.static_folder,request.path[1:])
 
 @app.route('/OneSignalSDKUpdaterWorker.js')
-def onesignalfirst():
+def onesignalsecond():
     return send_from_directory(app.static_folder,request.path[1:])
 
 @app.route('/manifest.json')
-def onesignalfirst():
+def onesignalthird():
     return send_from_directory(app.static_folder,request.path[1:])
 
 @app.route('/')
