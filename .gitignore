@@ -3,3 +3,5 @@ logs/
 /technieks19.json
 /images.json
 venv/
+__pycache__/
+.vscode/
