@@ -27,6 +27,18 @@ mail = Mail(app)
 def static_from_root():
     return send_from_directory(app.static_folder, request.path[1:])
 
+@app.route('/OneSignalSDKWorker.js')
+def onesignalfirst():
+    return send_from_directory(app.static_folder,request.path[1:])
+
+@app.route('/OneSignalSDKUpdaterWorker.js')
+def onesignalsecond():
+    return send_from_directory(app.static_folder,request.path[1:])
+
+@app.route('/manifest.json')
+def onesignalthird():
+    return send_from_directory(app.static_folder,request.path[1:])
+
 @app.route('/')
 @app.route('/index.html/')
 def index():
