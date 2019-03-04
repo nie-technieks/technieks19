@@ -176,6 +176,13 @@ def contactform():
     except:
         return "Error"
 
+@app.route('/live')
+def live():
+    try:
+        return render_template("live.html")
+    except:
+        return "Error"
+
 
 @app.errorhandler(404)
 def page_not_found(e):
