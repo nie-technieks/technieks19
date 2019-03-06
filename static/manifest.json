@@ -1,0 +1,18 @@
+{
+  "gcm_sender_id": "482941778795",
+  "gcm_sender_id_comment": "Do not change the GCM Sender ID",
+  "short_name": "techNIEks",
+  "name": "techNIEks 2019",
+  "icons": [
+    {
+      "src": "/static/images/onesignallogo.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "dir": "ltr",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "theme_color": "#3E3F3A"
+}
