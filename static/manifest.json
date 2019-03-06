@@ -1,0 +1,16 @@
+{
+  "short_name": "techNIEks",
+  "name": "techNIEks 2019",
+  "icons": [
+    {
+      "src": "/static/images/onesignallogo.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "dir": "ltr",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "theme_color": "#3E3F3A"
+}
